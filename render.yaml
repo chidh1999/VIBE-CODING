@@ -1,0 +1,47 @@
+services:
+  # Backend Service
+  - type: web
+    name: backend
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 1111
+      - key: MONGODB_URI
+        sync: false  # Set this in Render dashboard
+      - key: JWT_SECRET
+        sync: false  # Set this in Render dashboard
+      - key: CORS_ORIGIN
+        value: https://your-frontend-url.onrender.com
+
+  # Frontend Service (Static Site)
+  - type: web
+    name: frontend
+    env: static
+    region: singapore
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    rootDir: frontend
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false  # Set to backend service URL
+      - key: REACT_APP_TOUR_URL
+        sync: false  # Set to frontend service URL
+      - key: REACT_APP_TOUR_PORT
+        value: "80"
+
+  # MongoDB Database
+  - type: psmdb
+    name: mongodb
+    plan: free
+    region: singapore
+    databaseName: user_management
+    databaseUser: admin
+
