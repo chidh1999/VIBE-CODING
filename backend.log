@@ -1,0 +1,833 @@
+
+> backend@1.0.0 dev
+> nodemon server.js
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+[dotenv@17.2.3] injecting env (2) from .env -- tip: ⚙️  override existing env vars with { override: true }
+🔗 Attempting to connect to MongoDB...
+(node:1034891) [MONGOOSE] Warning: Duplicate schema index on {"email":1} found. This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1034891) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(node:1034891) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+✅ Mongoose connected to MongoDB
+🗄️  MongoDB Connected: localhost
+📊 Database: user_management
+🔄 Initializing default data...
+✅ Admin role already exists
+✅ User role already exists
+✅ Admin user already exists
+✅ Regular user already exists
+🎉 Data initialization completed!
+
+📋 Default credentials:
+Admin: admin@example.com / password
+User: user@example.com / password
+🚀 Server is running on port 1111
+📊 Health check: http://localhost:1111/api/health
+👥 Users API: http://localhost:1111/api/users
+💬 Chat API: http://localhost:1111/api/chat
+🔌 Socket.IO: ws://localhost:1111
+2025-11-13T04:22:38.777Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T04:22:38.800Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T04:22:38.807Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T04:22:38.812Z - GET / - 200 - 5ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:38.869Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T04:22:38.869Z - GET / - 200 - 0ms
+2025-11-13T04:22:38.879Z - GET / - 304 - 79ms
+2025-11-13T04:22:38.917Z - GET / - 304 - 140ms
+2025-11-13T04:22:38.918Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T04:22:38.918Z - GET / - 200 - 0ms
+2025-11-13T04:22:38.944Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T04:22:39.005Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T04:22:39.009Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T04:22:39.009Z - GET / - 200 - 0ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.021Z - GET / - 304 - 77ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.030Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T04:22:39.037Z - GET / - 304 - 32ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.043Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T04:22:39.048Z - GET / - 304 - 18ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.053Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T04:22:39.065Z - GET / - 304 - 22ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.071Z - GET / - 304 - 18ms
+2025-11-13T04:22:39.072Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.087Z - GET / - 304 - 15ms
+2025-11-13T04:22:39.090Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.106Z - GET / - 304 - 16ms
+2025-11-13T04:22:39.107Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.121Z - GET / - 304 - 14ms
+2025-11-13T04:22:39.124Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.137Z - GET / - 304 - 13ms
+2025-11-13T04:22:39.138Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T04:22:39.148Z - GET / - 304 - 10ms
+2025-11-13T06:24:56.018Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T06:24:56.026Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T06:24:56.029Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T06:24:56.029Z - GET / - 200 - 0ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:24:56.054Z - GET / - 304 - 36ms
+2025-11-13T06:24:56.055Z - GET / - 304 - 29ms
+2025-11-13T06:24:56.056Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T06:24:56.059Z - GET / - 200 - 3ms
+2025-11-13T06:24:56.069Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:24:56.086Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T06:24:56.097Z - GET / - 304 - 28ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:24:56.106Z - GET / - 304 - 20ms
+2025-11-13T06:24:56.107Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:24:56.127Z - GET / - 304 - 20ms
+2025-11-13T06:24:56.128Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:24:56.142Z - GET / - 304 - 14ms
+2025-11-13T06:30:18.062Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:18.072Z - GET / - 304 - 10ms
+2025-11-13T06:30:18.074Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T06:30:18.077Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T06:30:18.079Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T06:30:18.080Z - GET / - 200 - 1ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:18.087Z - GET /api/health - IP: 127.0.0.1
+2025-11-13T06:30:18.088Z - GET / - 200 - 1ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:18.099Z - GET / - 304 - 25ms
+2025-11-13T06:30:18.101Z - GET / - 304 - 24ms
+2025-11-13T06:30:18.102Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T06:30:18.107Z - GET /api/roles - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:18.123Z - GET / - 304 - 16ms
+2025-11-13T06:30:18.125Z - GET / - 304 - 23ms
+2025-11-13T06:30:18.126Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:18.138Z - GET / - 304 - 12ms
+2025-11-13T06:30:19.733Z - GET /api/roles - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:19.743Z - GET / - 304 - 10ms
+2025-11-13T06:30:19.744Z - GET /api/roles - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:19.752Z - GET / - 304 - 8ms
+2025-11-13T06:30:20.806Z - GET /api/support - IP: 127.0.0.1
+2025-11-13T06:30:21.137Z - GET / - 200 - 331ms
+2025-11-13T06:30:21.139Z - GET /api/support - IP: 127.0.0.1
+2025-11-13T06:30:21.150Z - GET / - 304 - 11ms
+2025-11-13T06:30:21.497Z - GET /api/users - IP: 127.0.0.1
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:21.507Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T06:30:21.513Z - GET / - 304 - 16ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:21.517Z - GET /api/users - IP: 127.0.0.1
+2025-11-13T06:30:21.521Z - GET / - 304 - 14ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:21.529Z - GET /api/roles - IP: 127.0.0.1
+2025-11-13T06:30:21.538Z - GET / - 304 - 21ms
+🔍 User role check: {
+  userId: new ObjectId('68fafd44f79272dc7ae75cbe'),
+  userName: 'Admin User',
+  role: {
+    _id: new ObjectId('68fafd44f79272dc7ae75cb8'),
+    name: 'admin',
+    description: 'Administrator with full access',
+    permissions: [
+      'read_users',
+      'write_users',
+      'delete_users',
+      'read_roles',
+      'write_roles',
+      'delete_roles',
+      'admin_access'
+    ],
+    isActive: true,
+    createdAt: 2025-10-24T04:15:00.217Z,
+    updatedAt: 2025-10-24T04:15:00.217Z,
+    __v: 0
+  },
+  roleName: 'admin',
+  roleId: new ObjectId('68fafd44f79272dc7ae75cb8')
+}
+2025-11-13T06:30:21.545Z - GET / - 304 - 16ms

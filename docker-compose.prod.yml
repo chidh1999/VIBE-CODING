@@ -1,0 +1,83 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mongodb-prod
+    ports:
+      - "${MONGO_PORT:-20711}:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USERNAME:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD:-password123}
+      - MONGO_INITDB_DATABASE=${MONGO_DATABASE:-user_management}
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: nodejs-backend-prod
+    ports:
+      - "${BACKEND_PORT:-1111}:1111"
+    environment:
+      - NODE_ENV=production
+      - PORT=1111
+      - MONGODB_URI=mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-password123}@mongodb:27017/${MONGO_DATABASE:-user_management}?authSource=admin
+      - JWT_SECRET=${JWT_SECRET:-your-secret-key-change-in-production}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:1111/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build: ./frontend
+    container_name: react-frontend-prod
+    ports:
+      - "${FRONTEND_PORT:-2222}:80"
+    environment:
+      - REACT_APP_API_URL=${REACT_APP_API_URL:-http://localhost:1111}
+      - REACT_APP_TOUR_PORT=${REACT_APP_TOUR_PORT:-5503}
+      - REACT_APP_TOUR_URL=${REACT_APP_TOUR_URL:-http://localhost:5503}
+    depends_on:
+      - backend
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # Optional: Tour server as separate service (if you prefer separate port)
+  # Uncomment if you want tour on separate port instead of nginx
+  # tour-server:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile.tour
+  #   container_name: tour-server-prod
+  #   ports:
+  #     - "${TOUR_PORT:-5503}:5503"
+  #   volumes:
+  #     - ./frontend/public/360:/app/360:ro
+  #   networks:
+  #     - app-network
+  #   restart: unless-stopped
+
+volumes:
+  mongodb_data:
+
+networks:
+  app-network:
+    driver: bridge
+
