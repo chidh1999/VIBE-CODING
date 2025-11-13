@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, 'Email is required'],
-    unique: true,
+    unique: true, // unique: true automatically creates an index
     lowercase: true,
     trim: true,
     match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please provide a valid email address']
@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Index for better query performance
-userSchema.index({ email: 1 });
+// Note: email index is already defined in schema with unique: true, so we don't need to add it again
 userSchema.index({ name: 1 });
 userSchema.index({ createdAt: -1 });
 
