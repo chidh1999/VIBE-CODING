@@ -37,11 +37,8 @@ services:
       - key: REACT_APP_TOUR_PORT
         value: "80"
 
-  # MongoDB Database
-  - type: psmdb
-    name: mongodb
-    plan: free
-    region: singapore
-    databaseName: user_management
-    databaseUser: admin
+  # Note: MongoDB is not supported in render.yaml blueprint
+  # Please create MongoDB manually:
+  # Option 1: Use MongoDB Atlas (recommended) - https://www.mongodb.com/cloud/atlas
+  # Option 2: Create MongoDB service manually in Render dashboard (if available)
 
