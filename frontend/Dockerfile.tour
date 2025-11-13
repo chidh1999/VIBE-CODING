@@ -1,0 +1,17 @@
+# Tour 360 Static Server Dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy tour server script
+COPY public/360/server.js ./server.js
+
+# Copy tour files
+COPY public/360 ./360
+
+# Expose port
+EXPOSE 5503
+
+# Start server
+CMD ["node", "server.js"]
+

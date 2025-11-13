@@ -1,0 +1,100 @@
+.permissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.permission-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.permission-checkbox:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.permission-checkbox input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.permission-checkbox span {
+  font-size: 0.9rem;
+  color: #374151;
+  cursor: pointer;
+}
+
+.status-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #374151;
+}
+
+.toggle-slider {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background: #d1d5db;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.status-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.status-toggle input[type="checkbox"]:checked + .toggle-slider {
+  background: #3b82f6;
+}
+
+.status-toggle input[type="checkbox"]:checked + .toggle-slider::before {
+  transform: translateX(20px);
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: all 0.2s ease;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsive design for permissions grid */
+@media (max-width: 768px) {
+  .permissions-grid {
+    grid-template-columns: 1fr;
+  }
+}

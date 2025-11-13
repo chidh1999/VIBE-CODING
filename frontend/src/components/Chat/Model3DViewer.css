@@ -1,0 +1,212 @@
+/* 3D Model Viewer */
+.model-3d-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.model-3d-container {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.model-3d-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.model-3d-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.model-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.model-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.viewer-controls {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.control-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.model-3d-body {
+  position: relative;
+  flex: 1;
+  min-height: 500px;
+}
+
+.model-3d-viewport {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.model-3d-viewport canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fef2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.error-icon {
+  font-size: 3rem;
+}
+
+.error-overlay p {
+  margin: 0;
+  color: #dc2626;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.model-3d-footer {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+
+.viewer-tips {
+  text-align: center;
+}
+
+.viewer-tips span {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .model-3d-container {
+    width: 95%;
+    max-height: 95vh;
+  }
+  
+  .model-3d-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .model-3d-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .viewer-controls {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .model-3d-body {
+    min-height: 400px;
+  }
+  
+  .model-3d-footer {
+    padding: 0.75rem 1rem;
+  }
+}

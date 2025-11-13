@@ -1,0 +1,268 @@
+/* Panorama360Viewer.css */
+.panorama-360-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 2rem;
+}
+
+.panorama-360-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panorama-360-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.panorama-360-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.panorama-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.panorama-name {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.viewer-controls {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.control-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.panorama-tools {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.tool-btn {
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tool-btn.active {
+  background: rgba(46, 204, 113, 0.8);
+  border-color: rgba(46, 204, 113, 0.9);
+}
+
+.close-button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.panorama-360-body {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.panorama-360-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.panorama-360-viewport canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.loading-overlay,
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  color: white;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-overlay p,
+.error-overlay p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.panorama-360-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+}
+
+.viewer-tips {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.editor-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.editor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.editor-row.header {
+  font-weight: 600;
+}
+
+.editor-input, .editor-select {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.editor-delete {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.editor-empty {
+  color: #777;
+}
+
+/* Hotspot visuals */
+.mz-hotspot-node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 999px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.mz-hotspot-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  text-align: center;
+  color: #2ecc71;
+}
+
+.mz-hotspot-label {
+  font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .panorama-360-overlay {
+    padding: 0;
+  }
+  
+  .panorama-360-container {
+    max-width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+  
+  .panorama-360-header {
+    padding: 1rem;
+  }
+  
+  .panorama-360-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .viewer-controls {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+}
+
